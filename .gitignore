@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build output
+dist/
+build/
+*.tsbuildinfo
+
+# Local dev
+.env
+.env.local
+*.sqlite
+*.sqlite3
+
+# OS / editor
+.DS_Store
+.vscode/
+.idea/
+
+# IMPORTANT: never let the private NIW tracker leak into this public repo
+# (it normally lives in a separate repo, but guard against accidental copies)
+niw-portal-tracker/
+**/niw-portal-tracker/
+progress.json

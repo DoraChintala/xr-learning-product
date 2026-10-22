@@ -1,0 +1,25 @@
+{
+  "name": "xr-learning-product",
+  "version": "0.1.0",
+  "description": "AI-personalized AR/VR learning platform for healthcare professionals (WebXR + adaptive learning engine)",
+  "type": "module",
+  "private": false,
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/server/server.js",
+    "test": "node --test test/"
+  },
+  "keywords": [
+    "webxr",
+    "ar",
+    "vr",
+    "adaptive-learning",
+    "bayesian-knowledge-tracing",
+    "reinforcement-learning",
+    "healthcare",
+    "medical-education"
+  ]
+}
