@@ -13,17 +13,19 @@
   <div class="login-card">
     <div class="login-brand"><span class="logo">◇</span><h1>XR Learning Product</h1></div>
     <p class="login-sub">AI-personalized AR/VR clinical training</p>
+    <p class="demo-banner">👋 Portfolio demo — type any name and sign in, or use the quick button below. No account needed.</p>
     <form id="login-form" class="login-form">
       <label>Username
         <input id="login-user" type="text" autocomplete="username" placeholder="e.g. dr.chintala" />
       </label>
       <label>Password
-        <input id="login-pass" type="password" autocomplete="current-password" placeholder="demo (any value)" />
+        <input id="login-pass" type="password" autocomplete="current-password" placeholder="anything — this is a demo" />
       </label>
       <p id="login-err" class="login-err"></p>
       <button type="submit" class="btn btn-primary">Sign in</button>
+      <button type="button" class="btn btn-ghost" id="btn-guest">Try the demo as Guest</button>
     </form>
-    <p class="demo-note">Demo login — front-end only, no real authentication. Any username works.</p>
+    <p class="demo-note">Demo login is front-end only — no real authentication and no data is stored on a server. Any username works.</p>
   </div>
 </section>
 

@@ -38,6 +38,16 @@ function initLogin() {
     initAnatomy();
     show('anatomy');
   });
+  // one-click guest entry for visitors
+  const guest = $('btn-guest');
+  if (guest) guest.addEventListener('click', () => {
+    const user = $('login-user').value.trim() || 'Guest';
+    localStorage.setItem('xrlp-user', user);
+    $('who').textContent = user;
+    initAnatomy();
+    show('anatomy');
+  });
+
   // skip login if already "signed in" this browser
   const saved = localStorage.getItem('xrlp-user');
   if (saved) $('login-user').value = saved;

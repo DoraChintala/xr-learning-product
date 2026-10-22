@@ -149,3 +149,8 @@ body {
 /* learn header right cluster */
 .learn-head-right { display: flex; align-items: center; gap: .7rem; flex-wrap: wrap; justify-content: flex-end; }
 .region-chip { font-size: .8rem; padding: .3rem .7rem; border: 1px solid var(--line); border-radius: 999px; }
+
+/* welcoming demo banner on the login card */
+.demo-banner { background: rgba(77,163,255,.1); border: 1px solid var(--line);
+  border-radius: 10px; padding: .6rem .8rem; font-size: .8rem; color: var(--ink); margin: 0 0 1rem; }
+.login-form .btn-ghost { margin-top: -.2rem; }
