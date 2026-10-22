@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>XR Learning Product — Adaptive Clinical Training</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ============ SCREEN 1: LOGIN ============ -->
+<section id="screen-login" class="screen screen-center">
+  <div class="login-card">
+    <div class="login-brand"><span class="logo">◇</span><h1>XR Learning Product</h1></div>
+    <p class="login-sub">AI-personalized AR/VR clinical training</p>
+    <form id="login-form" class="login-form">
+      <label>Username
+        <input id="login-user" type="text" autocomplete="username" placeholder="e.g. dr.chintala" />
+      </label>
+      <label>Password
+        <input id="login-pass" type="password" autocomplete="current-password" placeholder="demo (any value)" />
+      </label>
+      <p id="login-err" class="login-err"></p>
+      <button type="submit" class="btn btn-primary">Sign in</button>
+    </form>
+    <p class="demo-note">Demo login — front-end only, no real authentication. Any username works.</p>
+  </div>
+</section>
+
+<!-- ============ SCREEN 2: SELECT ANATOMY ============ -->
+<section id="screen-anatomy" class="screen" hidden>
+  <header class="topbar">
+    <div class="brand"><span class="logo">◇</span>
+      <div><h1>Choose what to learn</h1>
+        <p class="tagline">Signed in as <b id="who"></b> · select a region of human anatomy</p></div>
+    </div>
+  </header>
+  <div class="anatomy-layout">
+    <div class="anatomy-figure-wrap">
+      <div id="anatomy-figure"></div>
+      <p class="figure-hint">Click a highlighted organ to begin</p>
+    </div>
+    <div class="module-cards" id="module-cards"></div>
+  </div>
+</section>
+
+<!-- ============ SCREEN 3: LEARN ============ -->
+<section id="screen-learn" class="screen" hidden>
+  <header class="topbar">
+    <div class="brand"><span class="logo">◇</span>
+      <div><h1>XR Learning Product</h1>
+        <p class="tagline">live adaptive-engine demo</p></div>
+    </div>
+    <div class="learn-head-right">
+      <span class="region-chip" id="learn-region"></span>
+      <div class="competency" id="learn-competency"></div>
+      <button class="btn btn-ghost" id="btn-back">← Regions</button>
+      <button class="btn btn-ghost" id="btn-logout">Sign out</button>
+    </div>
+  </header>
+
+  <main class="layout">
+    <section class="panel activity-panel">
+      <div class="panel-head">
+        <span class="panel-label">Current Activity</span>
+        <span class="modality-chip" id="modality-chip">—</span>
+      </div>
+      <div class="activity-card">
+        <div class="skill-title" id="skill-title">Loading…</div>
+        <p class="skill-blurb" id="skill-blurb"></p>
+        <div class="scene" id="scene"><div class="scene-inner" id="scene-inner"></div></div>
+        <p class="prompt" id="prompt"></p>
+        <div class="controls">
+          <button class="btn btn-fail" id="btn-fail">✗ Performed poorly</button>
+          <button class="btn btn-ok" id="btn-ok">◐ Adequate</button>
+          <button class="btn btn-good" id="btn-good">✓ Performed well</button>
+        </div>
+        <p class="hint">Each attempt feeds the AI engine. Watch mastery and the chosen modality adapt.</p>
+      </div>
+    </section>
+
+    <aside class="panel brain-panel">
+      <span class="panel-label">What the AI Engine Decided</span>
+      <div class="decision" id="decision">Make an attempt to see the engine respond.</div>
+      <span class="panel-label" style="margin-top:1.1rem">Skill Mastery (BKT)</span>
+      <div class="mastery-list" id="mastery-list"></div>
+      <span class="panel-label" style="margin-top:1.1rem">Modality Performance (bandit)</span>
+      <div class="bandit-list" id="bandit-list"></div>
+      <div class="overall"><span>Overall competency</span>
+        <div class="overall-bar"><div class="overall-fill" id="overall-fill"></div></div>
+        <span id="overall-pct">0%</span>
+      </div>
+    </aside>
+  </main>
+
+  <section class="log-panel">
+    <span class="panel-label">Learning Log</span>
+    <div class="log" id="log"></div>
+    <button class="btn btn-auto" id="btn-auto">▶ Auto-run a competent learner (20 turns)</button>
+  </section>
+
+  <footer class="foot">
+    Engine: Bayesian Knowledge Tracing · UCB1 bandit · SM-2 spaced repetition · prerequisite graph —
+    the same modules covered by 34 passing unit tests. Synthetic data only.
+  </footer>
+</section>
+
+<script type="module" src="app.js"></script>
+</body>
+</html>
